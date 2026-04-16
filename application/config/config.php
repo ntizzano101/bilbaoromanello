@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://facilsassn.com/bilbaoromanello/';
+$config['base_url'] = 'http://localhost/bilbaoromanello/';
 
 /*
 |--------------------------------------------------------------------------
@@ -370,9 +370,9 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] ="/var/www/html/bilbaoromanello/application/cache";
+$config['sess_save_path'] ="c:/appserv/www/bilbaoromanello/application/cache";
 $config['sess_match_ip'] = FALSE;
-$config['sess_time_to_update'] = 0;
+$config['sess_time_to_update'] = 5000;
 $config['sess_regenerate_destroy'] = FALSE; 
 
 /*

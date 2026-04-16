@@ -1,5 +1,5 @@
 <?php
-class Login_model extends CI_Model {
+class Stock_model extends CI_Model {
 
        
 

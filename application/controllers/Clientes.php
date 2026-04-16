@@ -6,10 +6,8 @@ class Clientes extends CI_Controller {
 	
 	public function __construct(){
 		
-		      parent::__construct();
-			//var_dump($this->session);
-			if(!isset($this->session->usuario)){
-				//die("kokoa");
+		    parent::__construct();			
+			if(!isset($this->session->usuario) or  $this->session->tipo<>'usuario'){							
 				redirect('salir');
 				exit;
 		}		

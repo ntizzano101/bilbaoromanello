@@ -41,9 +41,10 @@ class Login extends CI_Controller {
 		$this->load->model('login_model');
 		$usu=$this->login_model->ingreso($usuario,$pass);        
 		if($usu){
-				$datos=array("usuario"=>$usu[0]->usuario,"titulo"=>$usu[0]->nombre,"fecha"=>date('Y-m-d'));
-				$this->session->set_userdata($datos);				
-				redirect('clientes/listado');							
+				$datos=array("usuario"=>$usu[0]->usuario,"titulo"=>$usu[0]->nombre,"fecha"=>date('Y-m-d'),"tipo"=>$usu[0]->tipo);												
+				$this->session->set_userdata($datos);	
+				if($this->session->tipo=='usuario'){redirect('clientes/listado');}
+				if($this->session->tipo=='vendedor'){redirect('stock/listado');}							
 		}
 		else{
 			$data["mensaje"]="Usuario o Password Incorrecto";
