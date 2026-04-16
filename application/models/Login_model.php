@@ -13,6 +13,7 @@ class Login_model extends CI_Model {
         {
 				
                 $sql="SELECT usuarios.*, 'usuario' as tipo,0 as id_cliente FROM usuarios WHERE usuario =? AND pwdcompare(?,contraseña)=1";				
+                die($sql);
                 $query=$this->db->query($sql,array($u,$p));                                
                 $rta=$query->result();               
 				if(!empty($rta)){                   
