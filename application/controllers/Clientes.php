@@ -7,8 +7,8 @@ class Clientes extends CI_Controller {
 	public function __construct(){
 		
 		    parent::__construct();			
-			if(!isset($this->session->usuario) or  $this->session->tipo<>'usuario'){							
-				redirect('salir');
+			if(!isset($this->session->usuario) or  $this->session->tipo<>'vendedor'){							
+			redirect('salir');
 				exit;
 		}		
 		
@@ -318,6 +318,25 @@ public function cuentacorriente($p=''){
 			
 		echo json_encode($rta);
 	  	return;				
-	}	
+	}
+    public function cambiar_pass()
+    {
+        $id=$this->session->id_cliente;
+		$data['cliente'] = $this->db->get_where('clientes', ['id_cliente' => $id])->row();
+           $this->load->view('encabezado.php'); 
+		$this->load->view('menu.php');
+		$this->load->view('clientes/cambiar_pass', $data);
+    }
+
+    public function guardar_pass()
+    {
+        $id = $this->input->post('id_cliente');
+        $nueva = $this->input->post('clave');
+
+        // Encriptar contraseña
+        $hash = $nueva;
+        $this->db->where('id_cliente', $id);
+        $this->db->update('clientes', ['clave' => $hash]);
+        redirect('clientes/cambiar_pass/'.$id);
+    }
 }
-?>

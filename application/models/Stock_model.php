@@ -42,6 +42,11 @@ class Stock_model extends CI_Model {
             $sql="UPDATE usuario SET password = ? WHERE username = ?";
             return $this->db->query($sql, array(md5($contrasena_nueva), $username));
         }
-
+ public function listado($nombre)
+        {
+            $sql="select * from listado_de_stock where  q>0 and nombre like ? order by bodega,nombre";
+            $a= $this->db->query($sql, array($nombre));
+            return ($a->result());
+        }
 }
 ?>

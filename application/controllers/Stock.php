@@ -31,9 +31,12 @@ class Stock extends CI_Controller {
         }
         public function listado()
         {
-            $this->load->model('stock_model');
-            $data["stock"]=$this->stock_model->listado();
-                    $this->load->library('funciones');
+            
+			$this->load->model('stock_model');
+			$nombre=$this->input->post('nombre');
+			$nombre="%" . $nombre . "%";
+            $data["productos"]=$this->stock_model->listado($nombre);
+        	$this->load->library('funciones');
             $fx=$this->funciones;
             $data["fx"]=$fx;
             $data["solocd"]="";

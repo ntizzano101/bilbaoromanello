@@ -34,16 +34,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 	      <li class="nav-item">
-			    <a class="nav-link" href="<?=base_url()?>">Stock</a> 
+			    <a class="nav-link" href="<?=base_url()?>Stock/listado">Stock</a> 
 		    </li>		
 		    <li class="nav-item">
-				  <a class="nav-link" href="<?=base_url()?>">Remitos</a>
+				  <a class="nav-link" href="<?=base_url()?>Remitos">Remitos</a>
 		    </li>				
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata("titulo") ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="<?=base_url()?>cambiar_contrasena_v">Cambiar contraseña</a></li>
+			<li><a href="<?=base_url()?>clientes/cambiar_pass">Cambiar contraseña</a></li>
             <li><a href="<?=base_url()?>salir">Salir</a></li>
           </ul>
         </li>
