@@ -7,7 +7,7 @@ class Clientes extends CI_Controller {
 	public function __construct(){
 		
 		    parent::__construct();			
-			if(!isset($this->session->usuario) or  $this->session->tipo<>'vendedor'){							
+			if(!isset($this->session->usuario) or  $this->session->tipo<>'usuario'){							
 			redirect('salir');
 				exit;
 		}		
@@ -323,7 +323,7 @@ public function cuentacorriente($p=''){
     {
         $id=$this->session->id_cliente;
 		$data['cliente'] = $this->db->get_where('clientes', ['id_cliente' => $id])->row();
-           $this->load->view('encabezado.php'); 
+        $this->load->view('encabezado.php'); 
 		$this->load->view('menu.php');
 		$this->load->view('clientes/cambiar_pass', $data);
     }
