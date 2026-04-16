@@ -22,7 +22,7 @@
         <tbody>
             <?php foreach($productos as $p): ?>
                 <tr>
-                    <td><?= $p->bodega ?></td>
+                    <td><?= $p->cod_prod ?></td>
                     <td class="nombre"><?= $p->nombre ?></td>
                     <td><?= $p->q ?></td>
                 </tr>
